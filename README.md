@@ -18,6 +18,10 @@ The ChatGPT App SDK lets you build custom apps that run directly inside ChatGPT 
 ### MCP Server
 This app runs as an MCP (Model Context Protocol) server that connects to ChatGPT, enabling the research functionality through natural conversation.
 
+### Mobile Version 
+<img width="1179" height="2556" alt="image" src="https://github.com/user-attachments/assets/be51e48d-5bde-4493-84f9-a0c97092d1da" />
+
+
 ### Setup
 1. Copy `.env.example` to `.env` and add your [Tavily Search API key](https://app.tavily.com/) and [OpenAI API key](https://platform.openai.com/):
    ```bash
@@ -40,9 +44,6 @@ ngrok http 3000
 ```
 
 3. In ChatGPT, enable developer mode and add your app using the ngrok URL.
-
-### Mobile Version 
-<img width="1179" height="2556" alt="image" src="https://github.com/user-attachments/assets/be51e48d-5bde-4493-84f9-a0c97092d1da" />
 
 
 ### Returned Data Schema
