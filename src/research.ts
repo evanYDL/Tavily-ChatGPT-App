@@ -52,7 +52,7 @@ function generateQueries(company: string): string[] {
 /**
  * Perform web search using Tavily API via LangChain
  */
-async function searchTavily(query: string, maxResults = 2): Promise<SearchResult[]> {
+async function searchTavily(query: string, maxResults = 3): Promise<SearchResult[]> {
   const retriever = new TavilySearchAPIRetriever({
     k: maxResults,
     includeRawContent: true,
@@ -101,7 +101,7 @@ async function researchCompany(company: string, maxResults = 1): Promise<SearchR
  */
 async function extractCompanyInfo(company: string, searchResults: SearchResult[]): Promise<CompanyInfo> {
   const searchContext = searchResults
-    .map((result, idx) => `[${idx + 1}] ${result.title}\n${result.content.slice(0, 2000)}...\nURL: ${result.url}`)
+    .map((result, idx) => `[${idx + 1}] ${result.title}\n${result.content.slice(0, 3000)}...\nURL: ${result.url}`)
     .join('\n\n');
 
   const systemPrompt = `You are an expert at extracting structured information about companies from search results.
